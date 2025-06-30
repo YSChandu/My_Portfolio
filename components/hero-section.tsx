@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ShimmerButton } from "./magicui/shimmer-button";
+import { RainbowButton } from "./rainbow-button";
 import { MyNavbar } from "./navbar";
 
 export function HeroSection() {
@@ -57,15 +57,7 @@ export function HeroSection() {
           }`}
         >
           <a href="#work">
-            <ShimmerButton
-              shimmerColor="black"
-              background="white"
-              borderRadius="100px"
-              shimmerDuration="4s"
-              className="text-lg text-black font-semibold "
-            >
-              Explore My Work
-            </ShimmerButton>
+            <RainbowButton>Explore My Work</RainbowButton>
           </a>
         </div>
       </div>
