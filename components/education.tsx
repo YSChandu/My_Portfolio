@@ -40,7 +40,7 @@ export function Education() {
       specialization: "Artificial Intelligence & Machine Learning",
       institution: "VIT AP University",
       duration: "2021 - 2025",
-      grade: "8.01",
+      grade: "8.16",
       gradeType: "CGPA",
       location: "Amaravati, AP",
       status: "Current",
