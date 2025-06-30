@@ -41,9 +41,9 @@ export function MyNavbar() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <a href="#contact">
-              <NavbarButton variant="secondary">Get In Touch</NavbarButton>
-            </a>
+            <NavbarButton href="#contact" variant="secondary">
+              Get In Touch
+            </NavbarButton>
           </div>
         </NavBody>
 
@@ -72,11 +72,14 @@ export function MyNavbar() {
               </a>
             ))}
             <div className="flex w-full flex-col gap-4">
-              <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
-                <NavbarButton variant="primary" className="w-full">
-                  Get In Touch
-                </NavbarButton>
-              </a>
+              <NavbarButton
+                href="#contact"
+                onClick={() => setIsMobileMenuOpen(false)}
+                variant="primary"
+                className="w-full"
+              >
+                Get In Touch
+              </NavbarButton>
             </div>
           </MobileNavMenu>
         </MobileNav>

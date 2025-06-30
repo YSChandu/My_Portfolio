@@ -19,6 +19,7 @@ export function Education() {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
+    cardRefs.current = cardRefs.current.slice(0, education.length);
     const handleScroll = () => {
       const newVisibleCards = cardRefs.current.map((ref) => {
         if (!ref) return false;
@@ -241,12 +242,12 @@ export function Education() {
                 </div>
 
                 {/* Grade Display */}
-                <div className="mb-6 p-4 bg-[#4e342e] rounded-xl border border-[#a1887f] group-hover:bg-[#6d4c41] transition-colors duration-300">
+                <div className="mb-6 p-4 bg-gray-100 rounded-xl border border-gray-200 group-hover:bg-gray-200 transition-colors duration-300">
                   <div className="text-center">
-                    <div className="text-3xl font-black text-white mb-1">
+                    <div className="text-3xl font-black text-gray-800 mb-1">
                       {edu.grade}
                     </div>
-                    <div className="text-sm text-white font-medium">
+                    <div className="text-sm text-gray-600 font-medium">
                       {edu.gradeType}
                     </div>
                   </div>
@@ -317,60 +318,7 @@ export function Education() {
                   </div>
                 </div>
 
-                {/* Achievements */}
-                <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-gray-800 mb-3">
-                    Achievements
-                  </h4>
-                  <div className="space-y-2">
-                    {edu.achievements.map((achievement, i) => {
-                      // Use colored text for first three achievements
-                      let textClass = "text-gray-600";
-                      if (i === 0) textClass = "text-blue-700 font-semibold";
-                      else if (i === 1)
-                        textClass = "text-green-700 font-semibold";
-                      else if (i === 2)
-                        textClass = "text-pink-700 font-semibold";
-                      return (
-                        <div
-                          key={i}
-                          className={`flex items-center gap-2 transition-all duration-300 ${
-                            hoveredEdu === idx ? "translate-x-2" : ""
-                          }`}
-                          style={{ transitionDelay: `${i * 100}ms` }}
-                        >
-                          <Award className={`w-3 h-3 ${textClass}`} />
-                          <span className={`text-sm ${textClass}`}>
-                            {achievement}
-                          </span>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Highlights */}
-                <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-gray-800 mb-3">
-                    Key Highlights
-                  </h4>
-                  <div className="space-y-2">
-                    {edu.highlights.map((highlight, i) => (
-                      <div
-                        key={i}
-                        className={`flex items-center gap-2 text-gray-600 transition-all duration-300 ${
-                          hoveredEdu === idx
-                            ? "translate-x-2 text-gray-700"
-                            : ""
-                        }`}
-                        style={{ transitionDelay: `${i * 100}ms` }}
-                      >
-                        <Zap className="w-3 h-3 text-gray-500" />
-                        <span className="text-sm">{highlight}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+               
 
                 {/* Progress Bar */}
                 <div className="relative h-1 bg-gray-100 rounded-full overflow-hidden">
@@ -383,30 +331,6 @@ export function Education() {
                   />
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Achievement Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {[
-            { label: "Education Levels", value: "3", icon: GraduationCap },
-            { label: "Perfect Scores", value: "2", icon: Trophy },
-            { label: "Years Studied", value: "16+", icon: Calendar },
-            { label: "Specializations", value: "AI/ML", icon: Target },
-          ].map((stat, idx) => (
-            <div
-              key={idx}
-              className="text-center p-6 bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
-              style={{ animationDelay: `${idx * 100}ms` }}
-            >
-              <div className="w-12 h-12 bg-gradient-to-br from-gray-800 to-black rounded-xl mx-auto mb-4 flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                <stat.icon className="w-6 h-6 text-white" />
-              </div>
-              <div className="font-black text-2xl text-gray-900 mb-2 group-hover:scale-110 transition-transform duration-300">
-                {stat.value}
-              </div>
-              <div className="text-gray-600 font-medium">{stat.label}</div>
             </div>
           ))}
         </div>

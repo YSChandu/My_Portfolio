@@ -27,10 +27,10 @@ export default function HomePage() {
       <section>
         <Education />
       </section>
-      <section id="work">
+      <section id="experience">
         <Experience />
       </section>
-      <section>
+      <section id="work">
         <Projects />
       </section>
       <section>

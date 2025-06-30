@@ -76,8 +76,7 @@ export function BentoSection() {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">About me</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Organize, visualize, and collaborate with ease. Experience seamless integration with our innovative
-            bento-style interface design.
+            I am a passionate AI and Machine Learning Engineer with a strong foundation in full-stack web development. My expertise lies in building intelligent applications using technologies like Python, TensorFlow, and PyTorch, coupled with modern frontend frameworks like React. I thrive on solving complex problems and creating seamless, user-centric experiences by bridging the gap between advanced AI and intuitive design.
           </p>
         </div>
       </div>

@@ -45,6 +45,10 @@ export function Experience() {
         "Process Analysis",
         "Safety Protocols",
       ],
+      certificate: {
+        name: "View Internship Certificate",
+        link: "https://drive.google.com/file/d/1uR91SCZkXJmPjXQ4jVGUOuuBUx49ZzdC/view",
+      },
       icon: Factory,
       companyType: "Public Sector Enterprise",
       color: "from-slate-600 to-slate-800",
@@ -66,6 +70,10 @@ export function Experience() {
         "Contributed to documentation and project planning",
       ],
       skills: ["Web Development", "React", "JavaScript", "Agile Methodology"],
+      certificate: {
+        name: "View Internship Certificate",
+        link: "https://drive.google.com/file/d/1YydZRWm2YmmAsFrPGFQ-QDxxDkBskbsP/view?usp=sharing",
+      },
       icon: Rocket,
       companyType: "Technology Startup",
       color: "from-gray-700 to-black",
@@ -110,14 +118,16 @@ export function Experience() {
 
         {/* Experience Cards with Clean Layout */}
         <div className="relative">
-          {/* Subtle connecting line - removed the problematic dots */}
+          {/* Subtle connecting line for desktop */}
           <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-200 to-transparent transform -translate-x-1/2 hidden lg:block opacity-50" />
+          {/* Vertical line for mobile */}
+          <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-200 to-transparent lg:hidden" />
 
           {experiences.map((exp, idx) => (
-            <div key={idx} className="relative w-full mb-16 lg:mb-24">
-              {/* Timeline Connector - always on the center line */}
+            <div key={idx} className="relative w-full mb-12 lg:mb-24">
+              {/* Timeline Connector */}
               <div
-                className="absolute left-1/2 top-8 z-20 hidden lg:block"
+                className="absolute left-6 lg:left-1/2 top-8 z-20"
                 style={{ transform: "translateX(-50%)" }}
               >
                 <div
@@ -129,11 +139,13 @@ export function Experience() {
                 />
               </div>
 
-              {/* Experience Card, floated left or right */}
+              {/* Experience Card */}
               <div
-                className={`relative group ${
-                  idx % 2 === 0 ? "lg:pr-12" : "lg:pl-12 lg:ml-auto"
-                } lg:w-1/2`}
+                className={`relative group ml-12 w-[calc(100%-3rem)] lg:w-1/2 ${
+                  idx % 2 === 0
+                    ? "lg:ml-0 lg:pr-12"
+                    : "lg:ml-auto lg:pl-12"
+                }`}
                 onMouseEnter={() => setActiveCard(idx)}
                 onMouseLeave={() => setActiveCard(null)}
                 style={{
@@ -152,24 +164,24 @@ export function Experience() {
                   }`}
                 >
                   {activeCard === idx && (
-                    <div className="w-full h-full bg-white rounded-3xl" />
+                    <div className="w-full h-full bg-white rounded-2xl lg:rounded-3xl" />
                   )}
                 </div>
 
                 {/* Card Content */}
-                <div className="relative z-10 p-8 lg:p-10">
+                <div className="relative z-10 p-6 lg:p-10">
                   {/* Header Section */}
-                  <div className="flex items-start gap-6 mb-8">
+                  <div className="flex items-start gap-4 lg:gap-6 mb-6 lg:mb-8">
                     <div className="relative group/icon">
                       <div
-                        className={`absolute inset-0 bg-white rounded-2xl shadow-lg`}
+                        className={`absolute inset-0 bg-white rounded-xl lg:rounded-2xl shadow-lg`}
                       />
                       <div
-                        className={`relative p-4 rounded-2xl flex items-center justify-center`}
+                        className={`relative p-3 lg:p-4 rounded-xl lg:rounded-2xl flex items-center justify-center`}
                       >
                         {/* Icon with color */}
                         <exp.icon
-                          className="w-8 h-8"
+                          className="w-6 h-6 lg:w-8 lg:h-8"
                           style={{
                             color:
                               exp.company === "Vizag Steel Plant"
@@ -178,7 +190,7 @@ export function Experience() {
                                 ? "#1976d2" // blue for Rocket
                                 : "#222",
                             background: "white",
-                            borderRadius: "0.75rem",
+                            borderRadius: "0.5rem", // smaller for mobile
                             boxShadow: "0 2px 8px 0 rgba(0,0,0,0.04)",
                             padding: "0.25rem",
                           }}
@@ -187,11 +199,11 @@ export function Experience() {
                     </div>
 
                     <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-3">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-3">
                         <span
                           className={`bg-gradient-to-r ${
                             exp.color
-                          } text-white text-xs px-3 py-1.5 rounded-full font-semibold shadow-sm transition-all duration-300 ${
+                          } text-white text-xs px-3 py-1.5 rounded-full font-semibold shadow-sm transition-all duration-300 self-start ${
                             activeCard === idx ? "scale-105" : ""
                           }`}
                         >
@@ -213,18 +225,18 @@ export function Experience() {
                         </div>
                       </div>
                       <h2
-                        className={`text-2xl lg:text-3xl font-bold text-gray-900 mb-2 transition-all duration-300 ${
+                        className={`text-xl lg:text-3xl font-bold text-gray-900 mb-1 lg:mb-2 transition-all duration-300 ${
                           activeCard === idx ? "text-black" : ""
                         }`}
                       >
                         {exp.role}
                       </h2>
-                      <h3 className="text-xl font-semibold text-gray-700 mb-4">
+                      <h3 className="text-lg lg:text-xl font-semibold text-gray-700 mb-3 lg:mb-4">
                         {exp.company}
                       </h3>
 
                       {/* Meta Info */}
-                      <div className="flex flex-wrap gap-6 text-sm">
+                      <div className="flex flex-col sm:flex-row flex-wrap gap-4 lg:gap-6 text-sm">
                         <div className="flex items-center gap-2 group/meta">
                           <Calendar
                             className={`w-4 h-4 transition-all duration-300 ${
@@ -255,7 +267,7 @@ export function Experience() {
                             className={`w-4 h-4 transition-all duration-300 ${
                               activeCard === idx
                                 ? "text-green-700 scale-110"
-                                : "text-green-600"
+                                : "text-green-500"
                             }`}
                           />
                           <span
@@ -273,156 +285,71 @@ export function Experience() {
                   </div>
 
                   {/* Description */}
-                  <div className="mb-8">
-                    <p
-                      className={`text-gray-600 leading-relaxed transition-all duration-300 ${
-                        activeCard === idx
-                          ? "text-gray-700 text-lg"
-                          : "text-base"
-                      }`}
-                    >
-                      {exp.description}
-                    </p>
-                  </div>
+                  <p className="text-base text-gray-600 mb-6 leading-relaxed">
+                    {exp.description}
+                  </p>
 
                   {/* Responsibilities */}
-                  <div className="mb-8">
-                    <h4
-                      className={`font-bold text-gray-800 mb-4 flex items-center gap-3 transition-all duration-300 ${
-                        activeCard === idx ? "text-black text-lg" : "text-base"
-                      }`}
-                    >
-                      <Users
-                        className={`w-5 h-5 transition-all duration-300 ${
-                          activeCard === idx ? "scale-110" : ""
-                        }`}
-                      />
-                      Key Responsibilities
-                    </h4>
-                    <div className="space-y-3">
+                  <div className="mb-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <Users className="w-5 h-5 text-gray-400" />
+                      <h4 className="text-lg font-bold text-gray-800">
+                        Key Responsibilities
+                      </h4>
+                    </div>
+                    <ul className="space-y-3 pl-4">
                       {exp.responsibilities.map((resp, i) => (
-                        <div
-                          key={i}
-                          className={`flex items-start gap-3 group/resp transition-all duration-300 delay-${
-                            i * 100
-                          } ${
-                            activeCard === idx ? "transform translate-x-2" : ""
-                          }`}
-                        >
-                          <ArrowRight
-                            className={`w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0 transition-all duration-300 ${
-                              activeCard === idx
-                                ? "text-gray-600 scale-110"
-                                : "group-hover/resp:text-gray-600"
-                            }`}
-                          />
-                          <span
-                            className={`text-gray-600 transition-all duration-300 ${
-                              activeCard === idx
-                                ? "text-gray-700"
-                                : "group-hover/resp:text-gray-700"
-                            }`}
-                          >
+                        <li key={i} className="flex items-start gap-3">
+                          <ArrowRight className="w-4 h-4 text-gray-400 mt-1.5 shrink-0" />
+                          <span className="text-base text-gray-600">
                             {resp}
                           </span>
-                        </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Skills */}
+                  <div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <Code className="w-5 h-5 text-gray-400" />
+                      <h4 className="text-lg font-bold text-gray-800">
+                        Skills & Technologies
+                      </h4>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {exp.skills.map((skill, i) => (
+                        <span
+                          key={i}
+                          className="bg-gray-100 text-gray-700 text-sm font-medium px-3 py-1.5 rounded-full shadow-sm"
+                        >
+                          {skill}
+                        </span>
                       ))}
                     </div>
                   </div>
 
-                  {/* Skills */}
-                  <div className="mb-8">
-                    <h4
-                      className={`font-bold text-gray-800 mb-4 flex items-center gap-3 transition-all duration-300 ${
-                        activeCard === idx ? "text-black text-lg" : "text-base"
-                      }`}
-                    >
-                      <Code
-                        className={`w-5 h-5 transition-all duration-300 ${
-                          activeCard === idx ? "scale-110" : ""
-                        }`}
-                      />
-                      Skills & Technologies
-                    </h4>
-                    <div className="flex flex-wrap gap-3">
-                      {exp.skills.map((skill, i) => {
-                        let colorClass = "bg-gray-100 text-gray-700";
-                        if (skill.toLowerCase().includes("git"))
-                          colorClass = "bg-yellow-100 text-yellow-800";
-                        else if (skill.toLowerCase().includes("docker"))
-                          colorClass = "bg-blue-100 text-blue-800";
-                        else if (skill.toLowerCase().includes("react"))
-                          colorClass = "bg-cyan-100 text-cyan-800";
-                        else if (skill.toLowerCase().includes("python"))
-                          colorClass = "bg-green-100 text-green-800";
-                        else if (skill.toLowerCase().includes("mongodb"))
-                          colorClass = "bg-green-200 text-green-900";
-                        else if (skill.toLowerCase().includes("javascript"))
-                          colorClass = "bg-yellow-200 text-yellow-900";
-                        else if (skill.toLowerCase().includes("web"))
-                          colorClass = "bg-blue-50 text-blue-700";
-                        else if (skill.toLowerCase().includes("automation"))
-                          colorClass = "bg-purple-100 text-purple-800";
-                        else if (skill.toLowerCase().includes("quality"))
-                          colorClass = "bg-pink-100 text-pink-800";
-                        else if (skill.toLowerCase().includes("process"))
-                          colorClass = "bg-orange-100 text-orange-800";
-                        else if (skill.toLowerCase().includes("agile"))
-                          colorClass = "bg-green-50 text-green-800";
-                        else if (skill.toLowerCase().includes("control"))
-                          colorClass = "bg-red-100 text-red-800";
-                        else if (skill.toLowerCase().includes("analysis"))
-                          colorClass = "bg-indigo-100 text-indigo-800";
-                        else if (skill.toLowerCase().includes("safety"))
-                          colorClass = "bg-gray-200 text-gray-800";
-                        return (
-                          <span
-                            key={i}
-                            className={`border border-gray-200 text-sm px-4 py-2 rounded-full font-medium transition-all duration-300 delay-${
-                              i * 50
-                            } ${colorClass} ${
-                              activeCard === idx
-                                ? "scale-105 shadow-sm"
-                                : "hover:bg-gray-200 hover:scale-105 hover:shadow-sm"
-                            }`}
-                          >
-                            {skill}
-                          </span>
-                        );
-                      })}
+                  {/* Certificate Section */}
+                  {exp.certificate && (
+                    <div className="mt-6">
+                      <div className="flex items-center gap-3 mb-4">
+                        <Award className="w-5 h-5 text-gray-400" />
+                        <h4 className="text-lg font-bold text-gray-800">
+                          Certificate
+                        </h4>
+                      </div>
+                      <a
+                        href={exp.certificate.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded-lg transition-colors duration-300 shadow-sm"
+                      >
+                        <span>{exp.certificate.name}</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </a>
                     </div>
-                  </div>
-
-                  {/* Animated Progress Bar */}
-                  <div className="relative h-2 bg-gray-100 rounded-full overflow-hidden">
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-r ${
-                        exp.color
-                      } rounded-full transition-all duration-1000 ease-out ${
-                        activeCard === idx
-                          ? "translate-x-0"
-                          : "-translate-x-full"
-                      }`}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent rounded-full" />
-                  </div>
+                  )}
                 </div>
-
-                {/* Subtle Floating Elements */}
-                <div
-                  className={`absolute top-6 right-6 w-16 h-16 bg-gradient-to-br from-gray-50/40 to-transparent rounded-full transition-all duration-700 ${
-                    activeCard === idx
-                      ? "opacity-100 scale-110"
-                      : "opacity-0 scale-100"
-                  }`}
-                />
-                <div
-                  className={`absolute bottom-6 left-6 w-12 h-12 bg-gradient-to-tl from-gray-50/30 to-transparent rounded-full transition-all duration-700 delay-200 ${
-                    activeCard === idx
-                      ? "opacity-100 scale-110"
-                      : "opacity-0 scale-100"
-                  }`}
-                />
               </div>
             </div>
           ))}

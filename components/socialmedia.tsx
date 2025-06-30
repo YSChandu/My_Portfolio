@@ -9,6 +9,7 @@ import {
   Users,
   Heart,
   Share2,
+  Download,
 } from "lucide-react"
 import { useState } from "react"
 
@@ -59,6 +60,17 @@ export function SocialMedia() {
       bgColor: "from-emerald-50 to-emerald-100",
       hoverColor: "hover:from-emerald-600 hover:to-emerald-800",
       stats: { label: "Projects", value: "10+" },
+    },
+    {
+      name: "Resume",
+      username: "Download my CV",
+      description: "A summary of my skills and experience",
+      url: "https://drive.google.com/file/d/1XcHeIeUjttx4YPMtSA9Alaf_AoQq13ui/view?usp=sharing", // Replace with your resume link
+      icon: Download,
+      color: "from-purple-500 to-purple-700",
+      bgColor: "from-purple-50 to-purple-100",
+      hoverColor: "hover:from-purple-600 hover:to-purple-800",
+      stats: { label: "Format", value: "PDF" },
     },
   ]
 
@@ -148,8 +160,12 @@ export function SocialMedia() {
                 <div
                   className={`inline-flex items-center gap-2 bg-gradient-to-r ${social.color} ${social.hoverColor} text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg`}
                 >
-                  <span>Connect</span>
-                  <MessageCircle className="w-4 h-4 group-hover:rotate-12 transition-transform duration-300" />
+                  <span>{social.name === "Resume" ? "Download" : "Connect"}</span>
+                  {social.name === "Resume" ? (
+                    <Download className="w-4 h-4 group-hover:rotate-12 transition-transform duration-300" />
+                  ) : (
+                    <MessageCircle className="w-4 h-4 group-hover:rotate-12 transition-transform duration-300" />
+                  )}
                 </div>
 
                 {/* Progress Bar */}

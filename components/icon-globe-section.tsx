@@ -118,14 +118,14 @@ export function IconGlobeSection() {
         </div>
 
         {/* Interactive Icon Globe */}
-        <div className="flex justify-center mb-12">
-          <div className="relative">
+        <div className="flex justify-center items-center mb-12">
+          <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg flex justify-center items-center">
             <IconCloud images={techIcons} />
           </div>
         </div>
 
         {/* Technology Categories */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
           {skills.map((skill, index) => (
             <div
               key={index}
@@ -235,9 +235,7 @@ export function IconGlobeSection() {
             Ready to collaborate on your next AI project?
           </p>
           <a
-            href="https://your-link-here.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact"
             className="relative inline-block group"
           >
             <span className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400 via-white to-yellow-400 opacity-0 group-hover:opacity-40 blur-lg transition-opacity duration-300 animate-pulse pointer-events-none" />

@@ -24,7 +24,7 @@ export function HeroSection() {
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
         >
-          <h1 className="text-7xl md:text-7xl font-bold text-black mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-black mb-4 md:mb-6 leading-tight">
             Yarrapothu Sai Chandu
           </h1>
         </div>
@@ -34,7 +34,7 @@ export function HeroSection() {
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
         >
-          <h2 className="text-2xl md:text-4xl text-gray-600 mb-8 font-light">
+          <h2 className="text-xl md:text-4xl text-gray-600 mb-6 md:mb-8 font-light">
             AI & ML Engineer
           </h2>
         </div>
@@ -44,7 +44,7 @@ export function HeroSection() {
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
         >
-          <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto mb-12 leading-relaxed">
+          <p className="text-base md:text-xl text-gray-500 max-w-2xl mx-auto mb-10 md:mb-12 leading-relaxed px-4">
             I craft digital experiences that blend beautiful design with
             powerful functionality. Specializing in modern web development and
             user-centered design.
@@ -56,15 +56,17 @@ export function HeroSection() {
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
         >
-          <ShimmerButton
-            shimmerColor="black"
-            background="white"
-            borderRadius="100px"
-            shimmerDuration="4s"
-            className="text-lg text-black font-semibold "
-          >
-            Explore My Work
-          </ShimmerButton>
+          <a href="#work">
+            <ShimmerButton
+              shimmerColor="black"
+              background="white"
+              borderRadius="100px"
+              shimmerDuration="4s"
+              className="text-lg text-black font-semibold "
+            >
+              Explore My Work
+            </ShimmerButton>
+          </a>
         </div>
       </div>
 

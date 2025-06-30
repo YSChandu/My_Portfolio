@@ -54,7 +54,7 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <h3 className="text-3xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-              John Doe
+              Yarrapothu Sai Chandu
             </h3>
             <p className="text-gray-400 text-lg leading-relaxed mb-6">
               Creating digital experiences that inspire, engage, and deliver results. Let's build something amazing
@@ -83,14 +83,20 @@ export function Footer() {
           <div>
             <h4 className="text-xl font-semibold mb-6 text-white">Quick Links</h4>
             <ul className="space-y-3">
-              {["About", "Services", "Portfolio", "Contact"].map((item, index) => (
-                <li key={item}>
+              {[
+                { name: "About", href: "#about" },
+                { name: "Services", href: "#services" },
+                { name: "Experience", href: "#experience" },
+                { name: "Work", href: "#work" },
+                { name: "Contact", href: "#contact" },
+              ].map((item, index) => (
+                <li key={item.name}>
                   <a
-                    href={`#${item.toLowerCase()}`}
+                    href={item.href}
                     className="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-2 inline-block"
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
-                    {item}
+                    {item.name}
                   </a>
                 </li>
               ))}
@@ -121,7 +127,9 @@ export function Footer() {
 
         {/* Bottom section */}
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 mb-4 md:mb-0">© 2024 John Doe. All rights reserved.</p>
+          <p className="text-gray-400 mb-4 md:mb-0">
+            © {new Date().getFullYear()} Yarrapothu Sai Chandu. All rights reserved.
+          </p>
 
           {/* Floating elements */}
           <div className="flex space-x-6">
