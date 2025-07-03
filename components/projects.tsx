@@ -12,9 +12,28 @@ import {
 export function Projects() {
   const projects = [
     {
+      title: "Driver Monitoring System using OpenCV",
+      description:
+        "Developed a real-time driver monitoring system using OpenCV, MediaPipe, and deep learning models to detect drowsiness, distractions (phone use, smoking, drinking), verify seatbelt usage, and perform periodic face recognition for driver identity verification.",
+      tech: ["OpenCV", "MediaPipe", "Deep Learning", "Face Recognition"],
+      github: "https://github.com/YSChandu/Driver-Monitoring-System",
+      demo: "",
+      icon: Brain,
+    },
+    {
+      title: "MINDCARE – AI-Driven Mental Health Wellness Platform",
+      description:
+        "Developed an AI-driven mental health platform using Django, integrating a Generative AI-powered chatbot for contextual support and a dynamic quiz system that analyzes user behavior to deliver personalized mental health insights and recommendations.",
+      tech: ["Django", "NLP", "OpenAI", "Deep Learning"],
+      github:
+        "https://github.com/YSChandu/MindCare-AI-Driven-Mental-Health-Wellness-Platform",
+      demo: "https://mindcare-ai-driven-mental-health.onrender.com/",
+      icon: Heart,
+    },
+    {
       title: "Semantic Book Recommendation Using LLMs and Vector Search",
       description:
-        "A semantic book recommendation system leveraging LLMs and vector search. Features similarity search, zero-shot classification, and a Gradio dashboard for seamless interaction.",
+        "Built a semantic book recommendation system using LLMs, vector search, and LangChain for contextual retrieval. Combined zero-shot classification, sentiment analysis, and a Gradio-based interactive dashboard for intelligent, user-friendly recommendations.",
       tech: ["LLMs", "Vector Search", "LangChain", "Gradio"],
       github: "https://github.com/YSChandu/semantic_book_recommender",
       demo: "https://chandu24-yt-semantic-book-recommendation.hf.space/",
@@ -23,48 +42,29 @@ export function Projects() {
     {
       title: "NewsPulse",
       description:
-        "Web app for news sentiment analysis and topic extraction. Summarizes news, analyzes sentiment, and converts results to Hindi audio using gTTS.",
+        "Developed NewsPulse, a Streamlit-based web app leveraging Generative AI for real-time news sentiment analysis, topic extraction, and multilingual audio synthesis using gTTS. Integrated Hugging Face-hosted models to analyze company-related news, generate comparative sentiment scores, and convert insights into audio for enhanced accessibility.",
       tech: ["Streamlit", "FastAPI", "NLP", "gTTS"],
       github: "https://github.com/YSChandu/FastAPI_User_interface",
       demo: "https://huggingface.co/spaces/Chandu24-YT/NewsPulse",
       icon: Globe,
     },
     {
-      title: "MindCare – AI-Driven Mental Health Wellness Platform",
+      title: "Hybrid Deep Learning Model for Brain Tumor Classification",
       description:
-        "AI-powered platform for mental health. Features chatbot, diagnosis quizzes, and curated wellness resources like yoga and music therapy.",
-      tech: ["Django", "NLP", "OpenAI", "Deep Learning"],
-      github:
-        "https://github.com/YSChandu/MindCare-AI-Driven-Mental-Health-Wellness-Platform",
-      demo: "https://mindcare-ai-driven-mental-health.onrender.com/",
-      icon: Heart,
-    },
-    {
-      title: "Brain Tumor Classification",
-      description:
-        "Automated MRI brain tumor classification using ResNet, DenseNet, PCA, and Random Forest for robust results.",
+        "Designed an automated brain tumor classification system using MRI scans by extracting deep features with a hybrid ResNet-DenseNet model, applying PCA for dimensionality reduction, and employing a Random Forest Classifier to accurately categorize tumors into Glioma, Meningioma, Pituitary, or No Tumor.",
       tech: ["ResNet", "DenseNet", "PCA", "Random Forest"],
       github: "",
       demo: "",
       icon: Brain,
     },
     {
-      title: "Gesture-Controlled Virtual Mouse",
+      title: "Gesture-Controlled Virtual Mouse using OpenCV",
       description:
-        "Virtual mouse using OpenCV and MediaPipe. Control cursor and system actions with hand gestures.",
+        "Built a virtual mouse using OpenCV and MediaPipe to control cursor and clicks through hand gestures. Extended functionality by adding custom gesture-based system controls like volume adjustment and browser navigation.",
       tech: ["OpenCV", "MediaPipe", "pyautogui"],
       github: "",
       demo: "",
       icon: Hand,
-    },
-    {
-      title: "Portfolio Analytics Dashboard",
-      description:
-        "A dummy analytics dashboard for visualizing portfolio performance, asset allocation, and risk metrics with interactive charts.",
-      tech: ["React", "Chart.js", "TailwindCSS"],
-      github: "",
-      demo: "",
-      icon: Sparkles,
     },
   ];
 

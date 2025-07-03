@@ -27,23 +27,25 @@ export function Experience() {
   const experiences = [
     {
       company: "Vizag Steel Plant",
-      role: "Technical Intern",
-      duration: "June 2023 - August 2023",
-      location: "Visakhapatnam, Andhra Pradesh",
+      role: "Team Lead & Django Developer Intern",
+      duration: "09/2023 – 10/2023",
+      location: "Vizag steel plant",
       type: "Industrial Internship",
       description:
-        "Gained hands-on experience in steel manufacturing processes, quality control, and industrial automation systems. Worked closely with engineering teams to understand production workflows and safety protocols.",
+        "Led a team of four to design, develop, and deploy the official RINL website using Django as the backend. Oversaw all phases of the project lifecycle, from requirements gathering to deployment, while ensuring best practices in code quality and teamwork.",
       responsibilities: [
-        "Analyzed steel production processes and quality control measures",
-        "Assisted in monitoring automated systems and equipment",
-        "Participated in safety training and industrial best practices",
-        "Collaborated with cross-functional teams on process optimization",
+        "Led a team of four in developing the RINL website using Django",
+        "Designed and implemented backend APIs and admin interfaces",
+        "Coordinated deployment and ensured website reliability",
+        "Collaborated with engineering teams for requirements and feedback",
+        "Managed project timelines and delegated tasks effectively",
       ],
       skills: [
-        "Industrial Automation",
-        "Quality Control",
-        "Process Analysis",
-        "Safety Protocols",
+        "Django",
+        "Team Leadership",
+        "Web Deployment",
+        "Backend Development",
+        "Project Management",
       ],
       certificate: {
         name: "View Internship Certificate",
@@ -58,18 +60,26 @@ export function Experience() {
     {
       company: "Startrit",
       role: "Software Development Intern",
-      duration: "January 2024 - April 2024",
-      location: "Remote / Hybrid",
+      duration: "Started: 23rd April 2025",
+      location: "Remote",
       type: "Tech Internship",
       description:
-        "Contributed to software development projects focusing on web applications and modern development practices. Gained experience in full-stack development and agile methodologies.",
+        "Worked on AI-powered driver monitoring systems to detect drowsiness, distractions, and unauthorized access. Currently developing a fleet management website and app using React and React Native for the Tamil Nadu government.",
       responsibilities: [
-        "Developed and maintained web applications using modern frameworks",
-        "Collaborated with development team on feature implementation",
-        "Participated in code reviews and testing processes",
-        "Contributed to documentation and project planning",
+        "Developed a driver monitoring system to detect drowsiness, phone usage, smoking, seat belt status, and driver authorization",
+        "Implemented real-time alerts and reporting features for fleet safety",
+        "Collaborated with the team to design and build a fleet management website using React",
+        "Developing a cross-platform mobile app with React Native for government fleet operations",
+        "Participated in agile development, code reviews, and project planning",
       ],
-      skills: ["Web Development", "React", "JavaScript", "Agile Methodology"],
+      skills: [
+        "AI/ML",
+        "Computer Vision",
+        "React",
+        "React Native",
+        "Web & App Development",
+        "Fleet Management",
+      ],
       certificate: {
         name: "View Internship Certificate",
         link: "https://drive.google.com/file/d/1YydZRWm2YmmAsFrPGFQ-QDxxDkBskbsP/view?usp=sharing",
@@ -142,9 +152,7 @@ export function Experience() {
               {/* Experience Card */}
               <div
                 className={`relative group ml-12 w-[calc(100%-3rem)] lg:w-1/2 ${
-                  idx % 2 === 0
-                    ? "lg:ml-0 lg:pr-12"
-                    : "lg:ml-auto lg:pl-12"
+                  idx % 2 === 0 ? "lg:ml-0 lg:pr-12" : "lg:ml-auto lg:pl-12"
                 }`}
                 onMouseEnter={() => setActiveCard(idx)}
                 onMouseLeave={() => setActiveCard(null)}
@@ -253,13 +261,6 @@ export function Experience() {
                             }`}
                           >
                             {exp.duration}
-                            {/* Add months if not present */}
-                            {exp.duration &&
-                            !/\b(month|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\b/i.test(
-                              exp.duration
-                            )
-                              ? " (3 months)"
-                              : ""}
                           </span>
                         </div>
                         <div className="flex items-center gap-2 group/meta">
