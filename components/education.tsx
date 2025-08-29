@@ -40,7 +40,7 @@ export function Education() {
       specialization: "Artificial Intelligence & Machine Learning",
       institution: "VIT AP University",
       duration: "2021 - 2025",
-      grade: "8.16",
+      grade: "8.22",
       gradeType: "CGPA",
       location: "Amaravati, AP",
       status: "Current",
@@ -166,7 +166,7 @@ export function Education() {
           {education.map((edu, idx) => (
             <div
               key={idx}
-              ref={(el) => (cardRefs.current[idx] = el)}
+              ref={(el) => { cardRefs.current[idx] = el; }}
               className="group relative overflow-hidden rounded-3xl bg-white border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-700 hover:-translate-y-3"
               onMouseEnter={() => setHoveredEdu(idx)}
               onMouseLeave={() => setHoveredEdu(null)}

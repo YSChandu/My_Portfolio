@@ -11,6 +11,7 @@ import {
   ArrowRight,
   Star,
   Briefcase,
+  Laptop,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -25,72 +26,106 @@ export function Experience() {
   }, []);
 
   const experiences = [
-    {
-      company: "Vizag Steel Plant",
-      role: "Team Lead & Django Developer Intern",
-      duration: "09/2023 – 10/2023",
-      location: "Vizag steel plant",
-      type: "Industrial Internship",
-      description:
-        "Led a team of four to design, develop, and deploy the official RINL website using Django as the backend. Oversaw all phases of the project lifecycle, from requirements gathering to deployment, while ensuring best practices in code quality and teamwork.",
-      responsibilities: [
-        "Led a team of four in developing the RINL website using Django",
-        "Designed and implemented backend APIs and admin interfaces",
-        "Coordinated deployment and ensured website reliability",
-        "Collaborated with engineering teams for requirements and feedback",
-        "Managed project timelines and delegated tasks effectively",
-      ],
-      skills: [
-        "Django",
-        "Team Leadership",
-        "Web Deployment",
-        "Backend Development",
-        "Project Management",
-      ],
-      certificate: {
-        name: "View Internship Certificate",
-        link: "https://drive.google.com/file/d/1uR91SCZkXJmPjXQ4jVGUOuuBUx49ZzdC/view",
-      },
-      icon: Factory,
-      companyType: "Public Sector Enterprise",
-      color: "from-slate-600 to-slate-800",
-      bgPattern:
-        "opacity-5 bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.1),transparent_50%)]",
+  {
+    company: "Quanta Global",
+    role: "Software Developer Intern",
+    duration: "08/2025 – Present",
+    location: "Remote",
+    type: "Tech Internship",
+    description:
+      "Joined Quanta Global as a Software Developer Intern on August 1st, 2025. Worked on a SAP project by contributing to the Next.js frontend and successfully delivering required features. Currently exploring NestJS for backend development while deepening expertise in Generative AI. Focused on building scalable solutions and gaining hands-on experience with modern technologies.",
+    responsibilities: [
+      "Developed the frontend for a SAP-based project using Next.js",
+      "Collaborated with the technical team to integrate frontend with backend systems",
+      "Currently learning and working with NestJS for backend development",
+      "Exploring advanced applications of Generative AI for real-world solutions",
+      "Actively contributing to scalable and maintainable software design",
+    ],
+    skills: [
+      "Next.js",
+      "NestJS",
+      "Generative AI",
+      "Frontend Development",
+      "Backend Development",
+      "Scalable Software Design",
+    ],
+    certificate: {
+      name: "Offer Letter",
+      link: "https://drive.google.com/file/d/your-offer-letter-link-here/view", // update with actual link if you want
     },
-    {
-      company: "Startrit",
-      role: "Software Development Intern",
-      duration: "Started: 23rd April 2025",
-      location: "Remote",
-      type: "Tech Internship",
-      description:
-        "Worked on AI-powered driver monitoring systems to detect drowsiness, distractions, and unauthorized access. Currently developing a fleet management website and app using React and React Native for the Tamil Nadu government.",
-      responsibilities: [
-        "Developed a driver monitoring system to detect drowsiness, phone usage, smoking, seat belt status, and driver authorization",
-        "Implemented real-time alerts and reporting features for fleet safety",
-        "Collaborated with the team to design and build a fleet management website using React",
-        "Developing a cross-platform mobile app with React Native for government fleet operations",
-        "Participated in agile development, code reviews, and project planning",
-      ],
-      skills: [
-        "AI/ML",
-        "Computer Vision",
-        "React",
-        "React Native",
-        "Web & App Development",
-        "Fleet Management",
-      ],
-      certificate: {
-        name: "View Internship Certificate",
-        link: "https://drive.google.com/file/d/1YydZRWm2YmmAsFrPGFQ-QDxxDkBskbsP/view?usp=sharing",
-      },
-      icon: Rocket,
-      companyType: "Technology Startup",
-      color: "from-gray-700 to-black",
-      bgPattern:
-        "opacity-5 bg-[radial-gradient(circle_at_30%_70%,rgba(0,0,0,0.1),transparent_50%)]",
+    icon: Laptop,
+    companyType: "Technology Company",
+    color: "from-indigo-600 to-purple-800",
+    bgPattern:
+      "opacity-5 bg-[radial-gradient(circle_at_60%_40%,rgba(0,0,0,0.1),transparent_50%)]",
+  },
+  {
+    company: "Startrit",
+    role: "Software Development Intern",
+    duration: "Started: 23rd April 2025",
+    location: "Remote",
+    type: "Tech Internship",
+    description:
+      "Worked on AI-powered driver monitoring systems to detect drowsiness, distractions, and unauthorized access. Currently developing a fleet management website and app using React and React Native for the Tamil Nadu government.",
+    responsibilities: [
+      "Developed a driver monitoring system to detect drowsiness, phone usage, smoking, seat belt status, and driver authorization",
+      "Implemented real-time alerts and reporting features for fleet safety",
+      "Collaborated with the team to design and build a fleet management website using React",
+      "Developing a cross-platform mobile app with React Native for government fleet operations",
+      "Participated in agile development, code reviews, and project planning",
+    ],
+    skills: [
+      "AI/ML",
+      "Computer Vision",
+      "React",
+      "React Native",
+      "Web & App Development",
+      "Fleet Management",
+    ],
+    certificate: {
+      name: "View Internship Certificate",
+      link: "https://drive.google.com/file/d/1YydZRWm2YmmAsFrPGFQ-QDxxDkBskbsP/view?usp=sharing",
     },
-  ];
+    icon: Rocket,
+    companyType: "Technology Startup",
+    color: "from-gray-700 to-black",
+    bgPattern:
+      "opacity-5 bg-[radial-gradient(circle_at_30%_70%,rgba(0,0,0,0.1),transparent_50%)]",
+  },
+  {
+    company: "Vizag Steel Plant",
+    role: "Team Lead & Django Developer Intern",
+    duration: "09/2023 – 10/2023",
+    location: "Vizag steel plant",
+    type: "Industrial Internship",
+    description:
+      "Led a team of four to design, develop, and deploy the official RINL website using Django as the backend. Oversaw all phases of the project lifecycle, from requirements gathering to deployment, while ensuring best practices in code quality and teamwork.",
+    responsibilities: [
+      "Led a team of four in developing the RINL website using Django",
+      "Designed and implemented backend APIs and admin interfaces",
+      "Coordinated deployment and ensured website reliability",
+      "Collaborated with engineering teams for requirements and feedback",
+      "Managed project timelines and delegated tasks effectively",
+    ],
+    skills: [
+      "Django",
+      "Team Leadership",
+      "Web Deployment",
+      "Backend Development",
+      "Project Management",
+    ],
+    certificate: {
+      name: "View Internship Certificate",
+      link: "https://drive.google.com/file/d/1uR91SCZkXJmPjXQ4jVGUOuuBUx49ZzdC/view",
+    },
+    icon: Factory,
+    companyType: "Public Sector Enterprise",
+    color: "from-slate-600 to-slate-800",
+    bgPattern:
+      "opacity-5 bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.1),transparent_50%)]",
+  },
+];
+
 
   return (
     <div className="relative w-full min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 overflow-hidden">
